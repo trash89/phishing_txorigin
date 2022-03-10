@@ -51,6 +51,13 @@ contract Wallet {
         (bool sent, ) = _to.call{value: _amount}("");
         require(sent, "Failed to send Ether");
     }
+
+    function transferFixed(address payable _to, uint256 _amount) public {
+        require(msg.sender == owner, "Not owner");
+
+        (bool sent, ) = _to.call{value: _amount}("");
+        require(sent, "Failed to send Ether");
+    }
 }
 
 contract Attack {
@@ -74,5 +81,14 @@ contract Attack {
             owner
         );
         wallet.transfer(owner, address(wallet).balance);
+    }
+
+    function attackFixed() public {
+        console.log(
+            "Call Attack.attackFixed() from %s but transferring to Attack.owner %s",
+            msg.sender,
+            owner
+        );
+        wallet.transferFixed(owner, address(wallet).balance);
     }
 }

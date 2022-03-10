@@ -18,6 +18,11 @@ def main():
     tx.wait(1)
     print_balances()
 
+    print("A[0] calls the Attack.attackFixed()...")
+    tx = a.attackFixed({"from": accounts[0]})
+    tx.wait(1)
+    print_balances()
+
 
 def print_balances():
     a0 = Web3.fromWei(accounts[0].balance(), "ether")

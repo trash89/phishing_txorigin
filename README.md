@@ -15,4 +15,6 @@ The result in the hardhat console :
 
 ![Hardhat console ](phishing_txorigin_console.png)
 
+When calling attackFixed which calls transferFixed(), this last function perform the correct check and revert the transaction.
+
 So, don't rely on tx.origin to check the sender of transaction, use msg.sender instead.
