@@ -1,6 +1,6 @@
 Study case of phishing with tx origin hack, from Solidity by example site [Solidity by Example, phishing with tx origin](https://solidity-by-example.org/hacks/phishing-with-tx-origin/)
 
-I used brownie with hardhat in order to deploy and use the console.log features.
+I use brownie to compile and deploy into hardhat in order to have the console.log feature.
 You should start the hardhat node in another terminal and folder (`hh node`), then, in a terminal :
 
 ```
